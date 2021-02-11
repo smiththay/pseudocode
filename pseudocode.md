@@ -85,7 +85,7 @@ As an individual you want to go from your current floor to a desired floor.
 		ElevatorCar is on floor below selected FloorPanel &&
 		ElevatorDoors are closed
 	ELSE IF
-		FloorNumber selected is above CurrentFloor && ElevatorDoors 			are closed
+		FloorNumber selected is above CurrentFloor && ElevatorDoors are closed
 	ELSE
 		Stay on CurrentFloor
 	WHILE
@@ -98,9 +98,9 @@ As an individual you want to go from your current floor to a desired floor.
 		DownArrow on FloorPanel
 		FloorNumber from FloorArray on CarPanel
 	IF
-		ElevatorCar is on a floor above selected FloorPanel && 				ElevatorDoors are closed
+		ElevatorCar is on a floor above selected FloorPanel && 	ElevatorDoors are closed
 	ELSE IF
-		FloorNumber selected is below CurrentFloor && ElevatorDoors 			are closed
+		FloorNumber selected is below CurrentFloor && ElevatorDoors are closed
 	ELSE 
 		Stay on CurrentFloor
 	WHILE
@@ -123,9 +123,9 @@ As an individual you want to go from your current floor to a desired floor.
 **Function DoorClose** 
 	
     IF
-		ElevatorCar has reached SelectedFloor && doors have been 			opened for (x) amount of time 
+		ElevatorCar has reached SelectedFloor && doors have been opened for (x) amount of time 
 	ELSE IF
-		CloseDoor button is pushed && doors have been opened for (x) 			amount of time
+		CloseDoor button is pushed && doors have been opened for (x) amount of time
 	ELSE
 		remains open
 	WHILE 
@@ -134,7 +134,7 @@ As an individual you want to go from your current floor to a desired floor.
 **EXCEPTION**
 	
     WHEN
-		ElevatorCar stops in-between floors || ElevatorDoors won’t open			at a floor
+		ElevatorCar stops in-between floors || ElevatorDoors won’t open	at a floor
 			INPUT
 				EmergencyAlarmButton
 
