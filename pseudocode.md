@@ -1,4 +1,5 @@
 # PseudoCode:Elevator
+
 ## OBJECTIVE
 As an individual you want to go from your current floor to a desired floor.
 
@@ -25,25 +26,30 @@ As an individual you want to go from your current floor to a desired floor.
 - CarPanel 
 
 **Elevator Controller**
-	COMPUTE
+	
+    COMPUTE
 		Elevator Functions 
-	DETERMINE
+	
+    DETERMINE
 		Current Floor 
 
 **FloorPanel**
-	SET
+	
+    SET
 		UpArrow 
 		DownArrow
 
 **CarPanel**
-	SET
+	
+    SET
 		FloorNumber 
 		OpenDoor
 		CloseDoor
 		EmergencyAlarmButton
 
 **ElevatorDisplay**
-	FOR  
+	
+    FOR  
 		Every floor ElevatorCar is on DISPLAY  current floor                               
  	
 	WHILE
@@ -51,24 +57,28 @@ As an individual you want to go from your current floor to a desired floor.
 		ElevatorCar travels down DISPLAY arrow pointing down
 
 **Individual**
-	INPUT
+	
+    INPUT
 		Value on FloorPanel 
 	       	Value on CarPanel
 
 **FUNC StepIN**
-	IF
+	
+    IF
 		 ElevatorDoor is open && Individual has not reached desired floor
 	ELSE
 		don’t move
 
 **FUNC StepOut**
-	IF
+	
+    IF
 		ElevatorDoor is open && Individual has reached desired floor
 	ELSE 
 		don’t move
 
 **Function TravelUp**
-	INPUT
+	
+    INPUT
 		UpArrow on FloorPanel 
 		FloorNumber from FloorArray on CarPanel
 	IF
@@ -83,7 +93,8 @@ As an individual you want to go from your current floor to a desired floor.
 			TravelDown Function is completed		
 
 **Function TravelDown**
-	INPUT	
+	
+    INPUT	
 		DownArrow on FloorPanel
 		FloorNumber from FloorArray on CarPanel
 	IF
@@ -97,7 +108,8 @@ As an individual you want to go from your current floor to a desired floor.
 			TravelUp Function is completed
 
 **Function DoorOpen** 
-	IF
+	
+    IF
 		ElevatorCar has reached SelectedFloor 
 	ELSE IF 
 		OpenDoor button is pushed && is at SelectedFloor 
@@ -109,7 +121,8 @@ As an individual you want to go from your current floor to a desired floor.
 		ElevatorCar is traveling ElevatorDoor remains closed
 
 **Function DoorClose** 
-	IF
+	
+    IF
 		ElevatorCar has reached SelectedFloor && doors have been 			opened for (x) amount of time 
 	ELSE IF
 		CloseDoor button is pushed && doors have been opened for (x) 			amount of time
@@ -119,7 +132,8 @@ As an individual you want to go from your current floor to a desired floor.
 		ElevatorCar is traveling ElevatorDoors remains closed
 
 **EXCEPTION**
-	WHEN
+	
+    WHEN
 		ElevatorCar stops in-between floors || ElevatorDoors won’t open			at a floor
 			INPUT
 				EmergencyAlarmButton
