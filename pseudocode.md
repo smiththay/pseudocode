@@ -22,7 +22,7 @@ As an individual you want to go from your current floor to a desired floor.
 **PROGRAM** Elevator 
 
 **INIT**
-- Patron
+- Individual
 - ElevatorCar
 - ElevatorController
 - ElevatorDoor
