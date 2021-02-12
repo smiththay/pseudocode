@@ -43,16 +43,16 @@ As an individual you want to go from your current floor to a desired floor.
 **FloorPanel**
 	
     SET
-		UpArrow //Destination is above current floor
-		DownArrow //Destination is below current floor
+		UpArrow Button//Destination is above current floor
+		DownArrow Button//Destination is below current floor
 
 **CarPanel**
 	
     SET
-		FloorNumber // Individual chooses from array to tell controller selected floor
-		OpenDoor
-		CloseDoor
-		EmergencyAlarmButton
+		FloorNumber Buttons// Individual chooses from array to tell controller selected floor
+		OpenDoor Button
+		CloseDoor Button
+		EmergencyAlarm Button
 
 **ElevatorDisplay**
 	
@@ -130,6 +130,8 @@ As an individual you want to go from your current floor to a desired floor.
 			OpenDoor button is pushed && is at SelectedFloor 
 		ELSE IF
 			 Individual is in doorway
+		THEN 
+			Door Opens
 		ELSE
 			 remains closed
 		WHILE
@@ -143,6 +145,8 @@ As an individual you want to go from your current floor to a desired floor.
 			CloseDoor button is pushed && doors have been opened for (x) amount of time
 		ELSE
 			remains open
+		THEN
+			Door Closes
 		WHILE 
 			ElevatorCar is traveling ElevatorDoors remains closed
 
