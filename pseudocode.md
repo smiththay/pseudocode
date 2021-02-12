@@ -3,6 +3,11 @@
 ## OBJECTIVE
 As an individual you want to go from your current floor to a desired floor.
 
+## Elevator Parts
+
+![parts](https://github.com/smiththay/pseudocode/blob/dev/img/elevatorparts.jpg)
+
+
 ## BASIC STEPS
 - Individual can step in and out of the elevator
 - Individual can input direction, desired floor number, whether to open and close elevator doors, or if there is an emergency
@@ -17,7 +22,7 @@ As an individual you want to go from your current floor to a desired floor.
 **PROGRAM** Elevator 
 
 **INIT**
-- Patron
+- Individual
 - ElevatorCar
 - ElevatorController
 - ElevatorDoor
@@ -31,18 +36,20 @@ As an individual you want to go from your current floor to a desired floor.
 		Elevator Functions 
 	
     DETERMINE
-		Current Floor 
+		Current Floor of ElevatorCar
+		Which floor to travel to if FloorPanel value is selected
+		When to stop at selected FloorNumber
 
 **FloorPanel**
 	
     SET
-		UpArrow 
-		DownArrow
+		UpArrow //Destination is above current floor
+		DownArrow //Destination is below current floor
 
 **CarPanel**
 	
     SET
-		FloorNumber 
+		FloorNumber // Individual chooses from array to tell controller selected floor
 		OpenDoor
 		CloseDoor
 		EmergencyAlarmButton
@@ -59,77 +66,84 @@ As an individual you want to go from your current floor to a desired floor.
 **Individual**
 	
     INPUT
-		Value on FloorPanel 
-	       	Value on CarPanel
+		Value on FloorPanel
+		Value on CarPanel
 
-**FUNC StepIN**
+	FUNC StepIN
 	
-    IF
-		 ElevatorDoor is open && Individual has not reached desired floor
-	ELSE
-		don’t move
+    	IF
+			 ElevatorDoor is open && Individual has not reached desired floor then step in
+		ELSE
+			don’t move
 
-**FUNC StepOut**
+	FUNC StepOut
 	
-    IF
-		ElevatorDoor is open && Individual has reached desired floor
-	ELSE 
-		don’t move
+    	IF
+			ElevatorDoor is open && Individual has reached desired floor then step out
+		ELSE 
+			don’t move
 
-**Function TravelUp**
+**ElevatorCar**
+	Function TravelUp
 	
-    INPUT
-		UpArrow on FloorPanel 
-		FloorNumber from FloorArray on CarPanel
-	IF
-		ElevatorCar is on floor below selected FloorPanel &&
-		ElevatorDoors are closed
-	ELSE IF
-		FloorNumber selected is above CurrentFloor && ElevatorDoors are closed
-	ELSE
-		Stay on CurrentFloor
-	WHILE
-		ElevatorCar is traveling down
+    	INPUT
+			UpArrow on FloorPanel 
+			FloorNumber from FloorArray on CarPanel
+		IF
+			ElevatorCar is on floor below selected FloorPanel &&
+			ElevatorDoors are closed
+		ELSE IF
+			FloorNumber selected is above CurrentFloor && ElevatorDoors are closed
+		THEN 
+			ElevatorCar travels up
+		ELSE
+			Stay on CurrentFloor
+		WHILE
+			ElevatorCar is traveling down
 			TravelDown Function is completed		
 
-**Function TravelDown**
+	Function TravelDown
 	
-    INPUT	
-		DownArrow on FloorPanel
-		FloorNumber from FloorArray on CarPanel
-	IF
-		ElevatorCar is on a floor above selected FloorPanel && 	ElevatorDoors are closed
-	ELSE IF
-		FloorNumber selected is below CurrentFloor && ElevatorDoors are closed
-	ELSE 
-		Stay on CurrentFloor
-	WHILE
-		ElevatorCar is traveling up 
+    	INPUT	
+			DownArrow on FloorPanel
+			FloorNumber from FloorArray on CarPanel
+		IF
+			ElevatorCar is on a floor above selected FloorPanel && 	ElevatorDoors are closed
+		ELSE IF
+			FloorNumber selected is below CurrentFloor && ElevatorDoors are closed
+		THEN 
+			ElevatorCar travels down
+		ELSE 
+			Stay on CurrentFloor
+		WHILE
+			ElevatorCar is traveling up 
 			TravelUp Function is completed
 
-**Function DoorOpen** 
-	
-    IF
-		ElevatorCar has reached SelectedFloor 
-	ELSE IF 
-		OpenDoor button is pushed && is at SelectedFloor 
-	ELSE IF
-		 Individual is in doorway
-	ELSE
-		 remains closed
-	WHILE
-		ElevatorCar is traveling ElevatorDoor remains closed
+**Elevator Doors**
 
-**Function DoorClose** 
+	Function DoorOpen
 	
-    IF
-		ElevatorCar has reached SelectedFloor && doors have been opened for (x) amount of time 
-	ELSE IF
-		CloseDoor button is pushed && doors have been opened for (x) amount of time
-	ELSE
-		remains open
-	WHILE 
-		ElevatorCar is traveling ElevatorDoors remains closed
+    	IF
+			ElevatorCar has reached SelectedFloor 
+		ELSE IF 
+			OpenDoor button is pushed && is at SelectedFloor 
+		ELSE IF
+			 Individual is in doorway
+		ELSE
+			 remains closed
+		WHILE
+			ElevatorCar is traveling ElevatorDoor remains closed
+
+	Function DoorClose
+	
+    	IF
+			ElevatorCar has reached SelectedFloor && doors have been opened for (x) amount of time 
+		ELSE IF
+			CloseDoor button is pushed && doors have been opened for (x) amount of time
+		ELSE
+			remains open
+		WHILE 
+			ElevatorCar is traveling ElevatorDoors remains closed
 
 **EXCEPTION**
 	
