@@ -1,5 +1,9 @@
 # PseudoCode:Elevator
 
+## Elevator Parts
+
+![parts](https://github.com/smiththay/pseudocode/blob/dev/img/elevatorparts.jpg)
+
 ## OBJECTIVE
 As an individual you want to go from your current floor to a desired floor.
 
