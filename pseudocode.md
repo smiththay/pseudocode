@@ -84,6 +84,7 @@ As an individual you want to go from your current floor to a desired floor.
 			don’t move
 
 **ElevatorCar**
+	
 	Function TravelUp
 	
     	INPUT
