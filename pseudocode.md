@@ -1,11 +1,12 @@
 # PseudoCode:Elevator
 
+## OBJECTIVE
+As an individual you want to go from your current floor to a desired floor.
+
 ## Elevator Parts
 
 ![parts](https://github.com/smiththay/pseudocode/blob/dev/img/elevatorparts.jpg)
 
-## OBJECTIVE
-As an individual you want to go from your current floor to a desired floor.
 
 ## BASIC STEPS
 - Individual can step in and out of the elevator
