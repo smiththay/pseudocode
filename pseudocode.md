@@ -33,12 +33,12 @@ As an individual you want to go from your current floor to a desired floor.
 **Elevator Controller**
 	
     COMPUTE
-		Elevator Functions 
+		All Functions 
 	
     DETERMINE
 		Current Floor of ElevatorCar
-		Which floor to travel to if FloorPanel value is selected
-		When to stop at selected FloorNumber
+		Which Floor to travelto and stop at
+		
 
 **FloorPanel**
 	
