@@ -31,7 +31,8 @@ As an individual you want to go from your current floor to a desired floor.
 		Elevator Functions 
 	
     DETERMINE
-		Current Floor 
+		Current Floor of ElevatorCar
+		when to stop at selected FloorNumber
 
 **FloorPanel**
 	
