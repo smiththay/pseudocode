@@ -66,8 +66,8 @@ As an individual you want to go from your current floor to a desired floor.
 **Individual**
 	
     INPUT
-		Value on FloorPanel 
-	    Value on CarPanel
+		Value on FloorPanel
+		Value on CarPanel
 
 	FUNC StepIN
 	
@@ -94,7 +94,8 @@ As an individual you want to go from your current floor to a desired floor.
 			ElevatorDoors are closed
 		ELSE IF
 			FloorNumber selected is above CurrentFloor && ElevatorDoors are closed
-		Then ElevatorCar travels up
+		THEN 
+			ElevatorCar travels up
 		ELSE
 			Stay on CurrentFloor
 		WHILE
@@ -110,7 +111,8 @@ As an individual you want to go from your current floor to a desired floor.
 			ElevatorCar is on a floor above selected FloorPanel && 	ElevatorDoors are closed
 		ELSE IF
 			FloorNumber selected is below CurrentFloor && ElevatorDoors are closed
-		Then ElevatorCar travels down
+		THEN 
+			ElevatorCar travels down
 		ELSE 
 			Stay on CurrentFloor
 		WHILE
