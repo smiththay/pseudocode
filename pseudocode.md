@@ -37,18 +37,19 @@ As an individual you want to go from your current floor to a desired floor.
 	
     DETERMINE
 		Current Floor of ElevatorCar
-		when to stop at selected FloorNumber
+		Which floor to travel to if FloorPanel value is selected
+		When to stop at selected FloorNumber
 
 **FloorPanel**
 	
     SET
-		UpArrow 
-		DownArrow
+		UpArrow //Destination is above current floor
+		DownArrow //Destination is below current floor
 
 **CarPanel**
 	
     SET
-		FloorNumber 
+		FloorNumber // Individual chooses from array to tell controller selected floor
 		OpenDoor
 		CloseDoor
 		EmergencyAlarmButton
@@ -66,21 +67,21 @@ As an individual you want to go from your current floor to a desired floor.
 	
     INPUT
 		Value on FloorPanel 
-	       	Value on CarPanel
+	    Value on CarPanel
 
-**FUNC StepIN**
+	FUNC StepIN**
 	
-    IF
-		 ElevatorDoor is open && Individual has not reached desired floor
-	ELSE
-		don’t move
+    	IF
+			 ElevatorDoor is open && Individual has not reached desired floor then step in
+		ELSE
+			don’t move
 
-**FUNC StepOut**
+	FUNC StepOut**
 	
-    IF
-		ElevatorDoor is open && Individual has reached desired floor
-	ELSE 
-		don’t move
+    	IF
+			ElevatorDoor is open && Individual has reached desired floor then step out
+		ELSE 
+			don’t move
 
 **Function TravelUp**
 	
@@ -92,6 +93,7 @@ As an individual you want to go from your current floor to a desired floor.
 		ElevatorDoors are closed
 	ELSE IF
 		FloorNumber selected is above CurrentFloor && ElevatorDoors are closed
+	Then ElevatorCar travels up
 	ELSE
 		Stay on CurrentFloor
 	WHILE
@@ -107,6 +109,7 @@ As an individual you want to go from your current floor to a desired floor.
 		ElevatorCar is on a floor above selected FloorPanel && 	ElevatorDoors are closed
 	ELSE IF
 		FloorNumber selected is below CurrentFloor && ElevatorDoors are closed
+	Then ElevatorCar travels down
 	ELSE 
 		Stay on CurrentFloor
 	WHILE
